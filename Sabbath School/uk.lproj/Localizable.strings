@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Sabbath School
+
+  Created by Vitaliy L on 2/17/2014.
+  Copyright (c) 2014 Vitaliy Lim. All rights reserved.
+*/
+"APP_TITLE" = "СУББОТНЯЯ ШКОЛА";
+"APP_ABOUT" = "О ПРОГРАММЕ";
+"APP_SHARE" = "ПОДЕЛИТЬСЯ";
+"APP_TODAY" = "Сегодня";
+"APP_AUTHOR" = "автор";
+"APP_SHARE_TEXT" = "Загружайте новое приложение Субботняя Школа!";
+"APP_DOWNLOADING" = "Загружается новый урочник...";
+"APP_ERROR_DOWNLOADING" = "Ошибка соединения.";
+"APP_ERROR_NO_NETWORK" = "Подключитесь к сети, доступен новый урочник.";
+"APP_RETRY" = "Попробовать снова";
+"APP_HIGHLIGHT" = "Подсветить";
+"APP_REMOVE_HIGHLIGHT" = "Убрать подсветку";
+"Sabbath School" = "Субботняя Школа";

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Sabbath School
+
+  Created by Vitaliy L on 2/17/2014.
+  Copyright (c) 2014 Vitaliy Lim. All rights reserved.
+*/
+"APP_TITLE" = "SABBATH SCHOOL";
+"APP_ABOUT" = "ABOUT";
+"APP_SHARE" = "SHARE";
+"APP_TODAY" = "Today";
+"APP_AUTHOR" = "author";
+"APP_SHARE_TEXT" = "Check out this new Sabbath School app!";
+"APP_DOWNLOADING" = "Downloading latest quarterly...";
+"APP_ERROR_DOWNLOADING" = "Communication error occurred.";
+"APP_ERROR_NO_NETWORK" = "Connect to internet to install new quarterly.";
+"APP_RETRY" = "RETRY";
+"APP_HIGHLIGHT" = "Highlight";
+"APP_REMOVE_HIGHLIGHT" = "Remove Highlight";
+"Sabbath School" = "Sabbath School";
