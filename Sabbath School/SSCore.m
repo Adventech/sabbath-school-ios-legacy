@@ -226,7 +226,7 @@ static NSString *ssCurrentLesson = nil;
     
     if (!count) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:[NSString stringWithFormat:@"https://s3-us-west-2.amazonaws.com/com.cryart.sabbathschool/latest_%@.json", [self getLang]] parameters:nil success:^(AFHTTPRequestOperation *operation, id ssQuarterly) {
+        [manager GET:[NSString stringWithFormat:@"https://s3-us-west-2.amazonaws.com/com.cryart.sabbathschool/temp_latest_%@.json", [self getLang]] parameters:nil success:^(AFHTTPRequestOperation *operation, id ssQuarterly) {
 
             NSString *ssQuarterName = [ssQuarterly objectForKey:@"quarter_name"];
             NSString *ssQuarterImage = [ssQuarterly objectForKey:@"quarter_image"];
