@@ -9,7 +9,7 @@
 #import "BibleViewController.h"
 #import "FontAwesomeKit.h"
 #import "Utils.h"
-
+#import <Parse/Parse.h>
 @interface BibleViewController ()
 @property UIActivityIndicatorView *activityIndicatorView;
 @end
@@ -17,6 +17,7 @@
 @implementation BibleViewController
 
 NSString *ssDayVerse = nil;
+NSString *bibleTextSize = @"small.css";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +36,13 @@ NSString *ssDayVerse = nil;
     self.webView.clipsToBounds = YES;
     [super viewDidLoad];
     
+    [PFAnalytics trackEvent:@"bible_verse_opened"];
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if ([settings objectForKey:@"Text Size"]){
+        bibleTextSize = [[settings objectForKey:@"Text Size"] stringByAppendingString:@".css"];
+    }
+    
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicatorView.center = self.view.center;
     [self.view addSubview:self.activityIndicatorView];
@@ -43,7 +51,10 @@ NSString *ssDayVerse = nil;
     NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"bible" ofType:@"html" inDirectory:@"/html" ];
     NSString *html = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
     
-    [self.webView loadHTMLString:[html stringByReplacingOccurrencesOfString:@"<body>" withString:[NSString stringWithFormat:@"<body>%@", ssDayVerse]] baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/html/", [[NSBundle mainBundle] bundlePath]]]];
+    html = [html stringByReplacingOccurrencesOfString:@"{{platform}}" withString:@"ios"];
+    html = [html stringByReplacingOccurrencesOfString:@"small.css" withString:bibleTextSize];
+    
+    [self.webView loadHTMLString:[html stringByReplacingOccurrencesOfString:@"<div class=\"wrapper\">" withString:[NSString stringWithFormat:@"<div class=\"wrapper\">%@", ssDayVerse]] baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/html/", [[NSBundle mainBundle] bundlePath]]]];
     
     UIImageView *closeIcon = [[UIImageView alloc] initWithFrame:CGRectMake(257, -15, 30, 30)];
     closeIcon.backgroundColor = [UIColor whiteColor];
