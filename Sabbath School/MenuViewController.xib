@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
@@ -19,34 +19,48 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blur_background_sidebar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7lf-aa-mKI">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sda_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-v5-OuP">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neD-Oi-H6S" userLabel="label_title">
+                    <rect key="frame" x="101" y="25" width="156" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sda_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-v5-OuP">
                     <rect key="frame" x="63" y="20" width="36" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="1pc-Uf-sED"/>
+                        <constraint firstAttribute="height" constant="31" id="W74-f5-4D1"/>
+                    </constraints>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SIp-8g-YmS">
-                    <rect key="frame" x="10" y="117" width="310" height="451"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SIp-8g-YmS">
+                    <rect key="frame" x="0.0" y="61" width="320" height="507"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="1" id="zi0-kM-YNI"/>
                         <outlet property="delegate" destination="1" id="K5p-XM-PnF"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neD-Oi-H6S" userLabel="label_title">
-                    <rect key="frame" x="101" y="25" width="156" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstItem="neD-Oi-H6S" firstAttribute="leading" secondItem="dsg-v5-OuP" secondAttribute="trailing" constant="2" id="4O4-XU-xL1"/>
+                <constraint firstItem="dsg-v5-OuP" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="67f-oC-vuN"/>
+                <constraint firstItem="SIp-8g-YmS" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Aq5-5K-Ldm"/>
+                <constraint firstAttribute="trailing" secondItem="SIp-8g-YmS" secondAttribute="trailing" id="GZW-XF-gDS"/>
+                <constraint firstItem="dsg-v5-OuP" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="63" id="LjR-Cr-zFh"/>
+                <constraint firstAttribute="bottom" secondItem="SIp-8g-YmS" secondAttribute="bottom" id="dq2-7h-eBk"/>
+                <constraint firstItem="SIp-8g-YmS" firstAttribute="top" secondItem="dsg-v5-OuP" secondAttribute="bottom" constant="10" id="jcB-lQ-14a"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <resources>
         <image name="blur_background_sidebar.jpg" width="640" height="1136"/>
         <image name="sda_logo.png" width="89" height="80"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

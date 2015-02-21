@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IASKAppSettingsViewController.h"
 
 @class WeekSelectionViewController;
 @class AboutViewController;
 
-@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface MenuViewController : UIViewController <IASKSettingsDelegate, UITableViewDelegate, UITableViewDataSource>{
     WeekSelectionViewController * modalVC;
-    AboutViewController * aboutViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *rearTableView;
