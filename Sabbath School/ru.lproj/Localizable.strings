@@ -16,5 +16,11 @@
 "APP_ERROR_NO_NETWORK" = "Подключитесь к сети, доступен новый урочник.";
 "APP_RETRY" = "Попробовать снова";
 "APP_HIGHLIGHT" = "Подсветить";
+"APP_SHARE_SELECTION" = "Поделиться";
 "APP_REMOVE_HIGHLIGHT" = "Убрать подсветку";
+"APP_MENU_SHARE" = "Поделиться";
+"APP_MENU_SETTINGS" = "Настройки";
+"APP_MENU_ABOUT" = "О Программе";
 "Sabbath School" = "Субботняя Школа";
+"APP_CLOSE" = "Закрыть";
+"APP_ABOUT_PHOTO_CREDITS" = "За фото спасибо @asimsness";

@@ -17,4 +17,10 @@
 "APP_RETRY" = "RETRY";
 "APP_HIGHLIGHT" = "Highlight";
 "APP_REMOVE_HIGHLIGHT" = "Remove Highlight";
+"APP_SHARE_SELECTION" = "Share";
+"APP_MENU_SHARE" = "Share";
+"APP_MENU_SETTINGS" = "Settings";
+"APP_MENU_ABOUT" = "About";
 "Sabbath School" = "Sabbath School";
+"APP_CLOSE" = "Close";
+"APP_ABOUT_PHOTO_CREDITS" = "Photo credits to @asimsness";
