@@ -1,0 +1,21 @@
+p, .question {
+    font-size: 23px;
+    line-height: 30px;
+}
+
+.title {
+    font-size: 30px;
+    line-height: 37px;
+}
+
+.sub-title {
+    font-size: 22px;
+    line-height: 29px;
+}
+
+.note textarea {
+    font-size: 23px;
+    line-height: 36px;
+    background-size: 100% 36px;
+    height: 95px;
+}

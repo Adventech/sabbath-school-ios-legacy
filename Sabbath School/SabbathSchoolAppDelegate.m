@@ -35,7 +35,23 @@
     [Parse setApplicationId:@"4okS62bwIe9o9zNcFGEnAcMOqS0YqVXXvfGwMLVd"
                   clientKey:@"4uqxfMSrVLOGybSXXUqASKW6ECGEtzSnLYE73Lz6"];
     
-    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    // Register for Push Notitications, if running iOS 8
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else {
+        // Register for Push Notifications before iOS 8
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                         UIRemoteNotificationTypeAlert |
+                                                         UIRemoteNotificationTypeSound)];
+    }
+    
+
     
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
@@ -50,8 +66,7 @@
         }
     }
     
-    [self.window makeKeyAndVisible];
-    
+    [self.window makeKeyAndVisible];    
     
 //    NSMutableArray *fontNames = [[NSMutableArray alloc] init];
 //    NSArray *fontFamilyNames = [UIFont familyNames];
@@ -85,8 +100,6 @@
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
     
     NSString* cachesPath=[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *appDBPath = [cachesPath stringByAppendingPathComponent:@"SabbathSchool.sqlite"];

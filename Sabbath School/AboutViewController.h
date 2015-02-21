@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController{
-    IBOutlet UILabel *label_author;
+@interface AboutViewController : UIViewController <UITableViewDelegate>{
 }
 
-@property (retain, nonatomic) IBOutlet UILabel *label_author;
-@property (retain, nonatomic) IBOutlet UIImageView *instagram_icon;
-@property (retain, nonatomic) IBOutlet UIImageView *twitter_icon;
 
-- (IBAction)instagramClick:(UITapGestureRecognizer *)sender;
-- (IBAction)twitterClick:(UITapGestureRecognizer *)sender;
-- (IBAction)loveYourNeighborClick:(UITapGestureRecognizer *)sender;
+
+@property (nonatomic, retain) IBOutlet UITableView *aboutTableView;
+@property (nonatomic, retain) IBOutlet UILabel *aboutNameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *loveThyNeighborLabel;
+@property (nonatomic, retain) IBOutlet UITapGestureRecognizer *loveThyNeighborTap;
+@property (nonatomic, readwrite, assign) NSString *ssDayDate;
+
+- (void)instagramClick;
+- (void)twitterClick;
+- (void)webClick;
+- (void)instagramAmaraClick;
 
 @end

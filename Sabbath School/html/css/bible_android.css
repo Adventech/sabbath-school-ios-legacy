@@ -1,0 +1,43 @@
+html {background-color:transparent; max-height:100%; height:100%; }
+body {
+
+    color: #4E4E4E;
+    font-family: "PT Serif", serif;
+    max-height:100%; height:100%;
+}
+
+.wrapper {
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.3);
+    border-radius:10px;
+    background-image: url("file:///android_asset/html/img/debut_light.png");
+    box-sizing:border-box;
+    overflow-y: auto;
+    padding:20px;
+    max-height:100%;
+    height:100%;
+    overflow-x: hidden;
+}
+
+body > h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+p {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.83em;
+    font-weight: bold;
+}

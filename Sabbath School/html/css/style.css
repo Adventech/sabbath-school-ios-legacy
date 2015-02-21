@@ -1,43 +1,50 @@
+@font-face {
+    font-family: "PT Serif";
+    font-weight:normal;
+    font-style:normal;
+    src: url("file:///android_asset/fonts/PTF55F.ttf") format("truetype");
+}
+
 body {
     box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.3);
 }
 
 .wrapper {
     padding: 10px 15px 20px 15px;
-
 }
 
 p {
-    font-family: 'PT Serif', serif;
+    font-family: "PT Serif", serif;
+    margin: 15px 0;
     font-size: 13px;
     line-height: 20px;
-    margin: 15px 0;
 }
 
 .title {
-    font-size: 20px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 4px
+    margin-bottom: 4px;
+    font-size: 20px;
+    line-height: 27px;
 }
 
 .sub-title {
-    font-size: 12px;
     color: #8D8D8D;
     margin: 0 0 10px;
-    text-align: center
+    text-align: center;
+    font-size: 12px;
+    line-height: 19px;
 }
 
 .question {
-    font-family: 'PT Serif', serif;
-    font-size: 13px;
-    line-height: 20px;
+    font-family: "PT Serif", serif;
     margin: 15px 0;
-    
     font-weight: 700;
     margin: 0;
     padding: 5px;
-    background-color: #FDFDFD
+    background-color: #FDFDFD;
+    font-size: 13px;
+    line-height: 20px;
 }
 
 .note + .note {
@@ -51,12 +58,12 @@ p {
 }
 
 .note textarea {
-    font-family: 'PT Serif', serif;
     font-size: 13px;
+    line-height: 26px;
+    font-family: "PT Serif", serif;
     background-color: #F8F5DB;
     background-image: -webkit-linear-gradient(#DEE2D0 1px, rgba(0, 0, 0, 0) 1px);
     background-size: 100% 26px;
-    line-height: 26px;
     border: 0;
     outline: 0;
     height: 75px;
