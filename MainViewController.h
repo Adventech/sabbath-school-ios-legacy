@@ -14,6 +14,7 @@
 @property (nonatomic) UIImage *image;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) BibleViewController *bibleViewController;
+@property (nonatomic, readwrite, assign) NSString *ssDayDate;
 
 - (void)ssLoadDay:(NSString *)ssDayP;
 - (void)openBible:(NSString *)verse;

@@ -15,6 +15,7 @@
 #import "Utils.h"
 #import "FontAwesomeKit.h"
 #import "Base64.h"
+#import <Parse/Parse.h>
 
 static CGFloat kImageOriginHeight = 68.f;
 
@@ -26,11 +27,18 @@ static CGFloat kImageOriginHeight = 68.f;
 
 @implementation MainViewController
 
+@synthesize ssDayDate;
 NSMutableArray *ssDayA = nil;
+NSString *textSize = @"small.css";
 UIBarButtonItem *goToTodayButtonItem = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if ([settings objectForKey:@"Text Size"]){
+        textSize = [[settings objectForKey:@"Text Size"] stringByAppendingString:@".css"];
+    }
     
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
@@ -38,6 +46,9 @@ UIBarButtonItem *goToTodayButtonItem = nil;
 
     FAKIonIcons *revealIcon = [FAKIonIcons androidSortIconWithSize:25.0f];
     [revealIcon addAttribute:NSForegroundColorAttributeName value:[Utils colorWithHex:0x504e60 alpha:1.0]];
+    
+    FAKIonIcons *moreIcon = [FAKIonIcons ios7MoreIconWithSize:25.0f];
+    [moreIcon addAttribute:NSForegroundColorAttributeName value:[Utils colorWithHex:0x504e60 alpha:1.0]];
     
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[revealIcon imageWithSize:CGSizeMake(25.0f, 25.0f)] style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
 
@@ -50,14 +61,14 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
     goToTodayButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"APP_TODAY", nil)  style:UIBarButtonItemStylePlain target:self action:@selector(ssLoadToday:)];
-    
     self.navigationItem.rightBarButtonItem = goToTodayButtonItem;
 
     self.title = NSLocalizedString(@"Sabbath School", nil);
     
     UIMenuItem *highlightMenu = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"APP_HIGHLIGHT", nil) action:@selector(highlightClicked:)];
     UIMenuItem *unHighlightMenu = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"APP_REMOVE_HIGHLIGHT", nil) action:@selector(unHighlightClicked:)];
-    [UIMenuController sharedMenuController].menuItems = @[highlightMenu, unHighlightMenu];
+    UIMenuItem *shareMenu = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"APP_SHARE_SELECTION", nil) action:@selector(shareClicked:)];
+    [UIMenuController sharedMenuController].menuItems = @[highlightMenu, unHighlightMenu, shareMenu];
     
     
     self.expandZoomImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -kImageOriginHeight, self.view.frame.size.width, kImageOriginHeight)];
@@ -87,8 +98,11 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicatorView.center = self.view.center;
     [self.view addSubview:self.activityIndicatorView];
-    
-    [self ssLoadDay:[SSCore ssTodayDate]];
+    if (ssDayDate){
+        [self ssLoadDay:ssDayDate];
+    } else {
+        [self ssLoadDay:[SSCore ssTodayDate]];
+    }
 }
 
 - (void)openBible:(NSString *)verse {
@@ -98,9 +112,11 @@ UIBarButtonItem *goToTodayButtonItem = nil;
 
 - (void)ssLoadToday:(id)sender {
     [self ssLoadDay:[SSCore ssTodayDate]];
+
 }
 
 - (void)ssLoadDay:(NSString *)ssDay {
+    self.ssDayDate = ssDay;
     if ([ssDay isEqual:[SSCore ssTodayDate]]){
         self.navigationItem.rightBarButtonItem = nil;
     } else {
@@ -114,6 +130,9 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     NSString *embedHTML = [ssDayA valueForKey:@"day_text"];
     NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"app" ofType:@"html" inDirectory:@"/html" ];
     NSString *html = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"{{platform}}" withString:@"ios"];
+    html = [html stringByReplacingOccurrencesOfString:@"small.css" withString:textSize];
     
     [self.webView loadHTMLString:[html stringByReplacingOccurrencesOfString:@"<div class=\"wrapper\">" withString:[NSString stringWithFormat:@"<div class=\"wrapper\">%@", embedHTML]] baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/html/", [[NSBundle mainBundle] bundlePath]]]];
 }
@@ -136,6 +155,18 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             [self saveHighlights];
         }
     }];
+}
+
+- (void)shareClicked:(id)sender {
+    NSMutableArray *sharingItems = [NSMutableArray new];
+    [[UIApplication sharedApplication] sendAction:@selector(copy:) to:nil from:self forEvent:nil];
+    NSString *shareText =  [UIPasteboard generalPasteboard].string;
+    
+    [sharingItems addObject:shareText];
+    [sharingItems addObject:self.expandZoomImageView.image];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 
 - (void)saveHighlights {
@@ -201,7 +232,7 @@ UIBarButtonItem *goToTodayButtonItem = nil;
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (action == @selector(highlightClicked:) || action == @selector(unHighlightClicked:)) {
+    if (action == @selector(highlightClicked:) || action == @selector(unHighlightClicked:) || action == @selector(shareClicked:)) {
         return YES;
     } else {
         return NO;
@@ -216,6 +247,7 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             if ([[responseData valueForKey:@"message"] isEqual: @"setHighlightFinished"]){
                 self.webView.userInteractionEnabled = NO;
                 self.webView.userInteractionEnabled = YES;
+                [PFAnalytics trackEvent:@"text_highlighted"];
             }
         }];
         
@@ -223,6 +255,7 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             if ([[responseData valueForKey:@"message"] isEqual: @"setCommentsFinished"]){
                 self.webView.userInteractionEnabled = NO;
                 self.webView.userInteractionEnabled = YES;
+                [PFAnalytics trackEvent:@"comment_added"];
             }
         }];
         
