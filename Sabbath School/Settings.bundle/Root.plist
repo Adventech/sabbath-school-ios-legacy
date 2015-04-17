@@ -9,6 +9,36 @@
 			<string>PSMultiValueSpecifier</string>
 			<key>Titles</key>
 			<array>
+				<string>English</string>
+				<string>French</string>
+				<string>Portuguese</string>
+				<string>Russian</string>
+				<string>Spanish</string>
+				<string>Ukrainian</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>en</string>
+				<string>fr</string>
+				<string>pt</string>
+				<string>ru</string>
+				<string>es</string>
+				<string>uk</string>
+			</array>
+			<key>Title</key>
+			<string>Lesson Language</string>
+			<key>Key</key>
+			<string>Lesson Language</string>
+			<key>DefaultValue</key>
+			<string>en</string>
+			<key>FooterText</key>
+            <string>Warning: Data charges may apply!</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Titles</key>
+			<array>
 				<string>Small</string>
 				<string>Medium</string>
 				<string>Large</string>
@@ -27,6 +57,28 @@
 			<string>Text Size</string>
 			<key>DefaultValue</key>
 			<string>small</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Titles</key>
+			<array>
+				<string>Regular</string>
+				<string>Night Mode</string>
+				<string>Sepia</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>style_normal.css</string>
+				<string>style_dark.css</string>
+				<string>style_sepia.css</string>
+			</array>
+			<key>Title</key>
+			<string>Reading Mode</string>
+			<key>Key</key>
+			<string>Reading Mode</string>
+			<key>DefaultValue</key>
+			<string>style_normal.css</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>
