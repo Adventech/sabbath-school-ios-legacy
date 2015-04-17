@@ -13,13 +13,17 @@ $(function(){
         } catch(err){}
     }
 
-    $("textarea").keyup(function(){
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(saveComments, saveCommentsTypingInterval);
+    $(document).on('keyup','textarea', function() {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(saveComments, saveCommentsTypingInterval);
     });
 
-    $("textarea").keydown(function(){
+    $(document).on('keydown','textarea', function() {
         clearTimeout(typingTimer);
+    });
+
+    $("textarea").blur(function(){
+        saveComments();
     });
 
     $(".verse").click(function(e){

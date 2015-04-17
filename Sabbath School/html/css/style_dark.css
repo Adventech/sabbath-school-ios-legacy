@@ -1,0 +1,16 @@
+.wrapper {
+    background: #252525;
+    color: #cccccc;
+}
+
+.note {
+    border: 1px solid #ccc;
+}
+
+.verse {
+    color: #6DCD97;
+}
+
+.question {
+    background-color: #252525;
+}

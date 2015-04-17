@@ -3,6 +3,7 @@ var sabbathSchool = Class({
     sizes: ["small", "medium", "large", "x-large"],
     highlighter: null,
     bridge: null,
+
     constructor: function(){
         rangy.init();
         var serializedHighlights = decodeURIComponent(window.location.search.slice(window.location.search.indexOf("=") + 1));
@@ -64,40 +65,5 @@ var sabbathSchool = Class({
 
     search: function(){
         SSBridge.search(window.getSelection().toString());
-    },
-
-    setSize: function(size){
-        var newSize = null;
-        $("link[data='sizes']").remove();
-        for (var i = 0; i < this.sizes.length; i++){
-            if (this.sizes[i].toUpperCase() == size.toUpperCase()){
-                newSize = i;
-            }
-        }
-        if (newSize != null){
-            this.currentSize = newSize;
-            $("head").append($('<link rel="stylesheet" data="sizes" type="text/css" />').attr('href', "css/"+size+".css"));
-            SSBridge.saveSizePreference(size);
-        }
-    },
-
-    setSizePreference: function(size){
-        for (var i = 0; i < this.sizes.length; i++){
-            if (this.sizes[i].toUpperCase() == size.toUpperCase()){
-                this.currentSize = i;
-            }
-        }
-    },
-
-    increaseSize: function(){
-        if ((this.currentSize + 1) < this.sizes.length){
-            this.setSize(this.sizes[(this.currentSize + 1)]);
-        }
-    },
-
-    decreaseSize: function(){
-        if ((this.currentSize - 1) >= 0){
-            this.setSize(this.sizes[(this.currentSize - 1)]);
-        }
     }
 });

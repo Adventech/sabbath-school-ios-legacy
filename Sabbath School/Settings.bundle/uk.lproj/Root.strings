@@ -1,9 +1,21 @@
 /* A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences. */
 
-"Text Size" = "Размер шрифта";
-"Small" = "Маленьний";
-"Medium" = "Средний";
-"Large" = "Большой";
-"Extra Large" = "Очень Большой";
+"Text Size" = "Розмір Тексту";
+"Small" = "Невеликий";
+"Medium" = "Середній";
+"Large" = "Великий";
+"Extra Large" = "Дуже Великий";
 
+"Lesson Language" = "Мова Урочніка";
+"English" = "Англійська";
+"French" = "Французький";
+"Portuguese" = "Португальська";
+"Russian" = "Російська";
+"Spanish" = "Іспанська";
+"Ukrainian" = "Український";
+"Warning: Data charges may apply!" = "Увага: буде проведена завантаження!";
 
+"Reading Mode" = "Режим Читання";
+"Regular" = "Звичайний";
+"Night Mode" = "Нічний Режим";
+"Sepia" = "Сепія";
