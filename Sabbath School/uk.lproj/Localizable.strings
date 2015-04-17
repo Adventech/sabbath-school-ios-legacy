@@ -5,22 +5,22 @@
   Created by Vitaliy L on 2/17/2014.
   Copyright (c) 2014 Vitaliy Lim. All rights reserved.
 */
-"APP_TITLE" = "СУББОТНЯЯ ШКОЛА";
-"APP_ABOUT" = "О ПРОГРАММЕ";
-"APP_SHARE" = "ПОДЕЛИТЬСЯ";
-"APP_TODAY" = "Сегодня";
+"APP_TITLE" = "СУБОТНЯ ШКОЛА";
+"APP_ABOUT" = "ПРО ДОДАТОК";
+"APP_SHARE" = "ПОДІЛИТИСЯ";
+"APP_TODAY" = "Сьогодні";
 "APP_AUTHOR" = "автор";
-"APP_SHARE_TEXT" = "Загружайте новое приложение Субботняя Школа!";
-"APP_DOWNLOADING" = "Загружается новый урочник...";
-"APP_ERROR_DOWNLOADING" = "Ошибка соединения.";
-"APP_ERROR_NO_NETWORK" = "Подключитесь к сети, доступен новый урочник.";
-"APP_RETRY" = "Попробовать снова";
-"APP_HIGHLIGHT" = "Подсветить";
+"APP_SHARE_TEXT" = "Завантажуйте новий додаток Суботня Школа!";
+"APP_DOWNLOADING" = "Завантажується новий підручник ...";
+"APP_ERROR_DOWNLOADING" = "Помилка з'єднання.";
+"APP_ERROR_NO_NETWORK" = "Підключіться до мережі, доступний новий підручник.";
+"APP_RETRY" = "Спробувати Знову";
+"APP_HIGHLIGHT" = "Підсвітити";
 "APP_SHARE_SELECTION" = "Поделиться";
-"APP_REMOVE_HIGHLIGHT" = "Убрать подсветку";
-"APP_MENU_SHARE" = "Поделиться";
-"APP_MENU_SETTINGS" = "Настройки";
-"APP_MENU_ABOUT" = "О Программе";
-"Sabbath School" = "Субботняя Школа";
-"APP_CLOSE" = "Закрыть";
-"APP_ABOUT_PHOTO_CREDITS" = "За фото спасибо @asimsness";
+"APP_REMOVE_HIGHLIGHT" = "Прибрати підсвітку";
+"APP_MENU_SHARE" = "Поділитися";
+"APP_MENU_SETTINGS" = "Налаштування";
+"APP_MENU_ABOUT" = "Про додаток";
+"Sabbath School" = "Суботня Школа";
+"APP_CLOSE" = "Закрити";
+"APP_ABOUT_PHOTO_CREDITS" = "За фото дякую @asimsness";
