@@ -11,7 +11,7 @@
 #import "MainViewController.h"
 #import "Utils.h"
 #import "SWRevealViewController.h"
-#import <Parse/Parse.h>
+
 @interface AboutViewController ()
 
 @end
@@ -25,6 +25,7 @@
 @synthesize ssDayDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self.screenName = @"SSAboutActivity";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;
 }
@@ -50,7 +51,7 @@
 }
 
 - (void)webClick {
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[@"https://vitalik.github.io/ss" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[@"https://vitalikl.github.io/ss" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 }
 
 - (void)instagramAmaraClick {
@@ -64,7 +65,6 @@
 }
 
 - (IBAction)loveThyNeighborTap:(UITapGestureRecognizer *)sender{
-    [PFAnalytics trackEvent:@"about_window_love_thy_neighbor_clicked"];
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[@"https://www.google.com/search?q=ואהבת+לרעך+כמוך" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 }
 
@@ -142,25 +142,21 @@
     switch (indexPath.row){
         case 0: {
             self.instagramClick;
-            [PFAnalytics trackEvent:@"about_window_instagram_clicked"];
             break;
         }
             
         case 1: {
             self.twitterClick;
-            [PFAnalytics trackEvent:@"about_window_twitter_clicked"];
             break;
         }
             
         case 2: {
             self.webClick;
-            [PFAnalytics trackEvent:@"about_window_web_clicked"];
             break;
         }
             
         case 3: {
             self.instagramAmaraClick;
-            [PFAnalytics trackEvent:@"about_window_instagram_amara_clicked"];
             break;
         }
     }
@@ -177,7 +173,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [PFAnalytics trackEvent:@"about_window_opened"];
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"APP_CLOSE", nil) style:UIBarButtonItemStylePlain target:self action:@selector(closeButtonAction:)];
     self.navigationItem.rightBarButtonItem = anotherButton;
     self.title = NSLocalizedString(@"APP_MENU_ABOUT", nil);

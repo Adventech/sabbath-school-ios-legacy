@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BibleViewController.h"
+#import "GAITrackedViewController.h"
 
-@interface MainViewController : UIViewController<UIScrollViewDelegate> {}
+@interface MainViewController : GAITrackedViewController<UIScrollViewDelegate> {}
 
 @property (nonatomic) UIImage *image;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;

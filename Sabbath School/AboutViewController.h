@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface AboutViewController : UIViewController <UITableViewDelegate>{
-}
-
-
+@interface AboutViewController : GAITrackedViewController <UITableViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView *aboutTableView;
 @property (nonatomic, retain) IBOutlet UILabel *aboutNameLabel;

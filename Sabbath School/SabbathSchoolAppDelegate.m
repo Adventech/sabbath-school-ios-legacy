@@ -15,7 +15,8 @@
 #import "SSCore.h"
 #import "Utils.h"
 #import "FMDatabase.h"
-#import <Parse/Parse.h>
+#import "GAI.h"
+#import "GAIFields.h"
 
 @interface SabbathSchoolAppDelegate()<SWRevealViewControllerDelegate>
 @end
@@ -32,50 +33,12 @@
     LoadingViewController *lwc = [[LoadingViewController alloc] init];
     self.window.rootViewController = lwc;
     
-    [Parse setApplicationId:@"4okS62bwIe9o9zNcFGEnAcMOqS0YqVXXvfGwMLVd"
-                  clientKey:@"4uqxfMSrVLOGybSXXUqASKW6ECGEtzSnLYE73Lz6"];
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 4;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-60193683-1"];
     
-    // Register for Push Notitications, if running iOS 8
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-                                                        UIUserNotificationTypeBadge |
-                                                        UIUserNotificationTypeSound);
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-                                                                                 categories:nil];
-        [application registerUserNotificationSettings:settings];
-        [application registerForRemoteNotifications];
-    } else {
-        // Register for Push Notifications before iOS 8
-        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                         UIRemoteNotificationTypeAlert |
-                                                         UIRemoteNotificationTypeSound)];
-    }
-    
-
-    
-    if (application.applicationState != UIApplicationStateBackground) {
-        // Track an app open here if we launch with a push, unless
-        // "content_available" was used to trigger a background push (introduced
-        // in iOS 7). In that case, we skip tracking here to avoid double
-        // counting the app-open.
-        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
-        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
-        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
-            [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-        }
-    }
-    
-    [self.window makeKeyAndVisible];    
-    
-//    NSMutableArray *fontNames = [[NSMutableArray alloc] init];
-//    NSArray *fontFamilyNames = [UIFont familyNames];
-//    for (NSString *familyName in fontFamilyNames){
-//        NSLog(@"Font Family Name = %@", familyName);
-//        NSArray *names = [UIFont fontNamesForFamilyName:familyName];
-//        NSLog(@"Font Names = %@", fontNames);
-//        [fontNames addObjectsFromArray:names];
-//    }
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -117,22 +80,13 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation addObject:[SSCore getLang] forKey:@"Lang"];
-    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation addObject:[SSCore getLang] forKey:@"Lang"];
-    [currentInstallation saveInBackground];
 }
 
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

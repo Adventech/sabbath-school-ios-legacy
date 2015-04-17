@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface BibleViewController : UIViewController
+@interface BibleViewController : GAITrackedViewController
 
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *popUpView;

@@ -15,7 +15,8 @@
 #import "Utils.h"
 #import "FontAwesomeKit.h"
 #import "Base64.h"
-#import <Parse/Parse.h>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
 static CGFloat kImageOriginHeight = 68.f;
 
@@ -29,15 +30,25 @@ static CGFloat kImageOriginHeight = 68.f;
 
 @synthesize ssDayDate;
 NSMutableArray *ssDayA = nil;
-NSString *textSize = @"small.css";
+NSString *textSize = @"medium.css";
+NSString *textStyle = @"style_normal.css";
 UIBarButtonItem *goToTodayButtonItem = nil;
+id<GAITracker> tracker = nil;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    tracker = [[GAI sharedInstance] defaultTracker];
+    self.screenName = @"SSMainActivity";
+    
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     if ([settings objectForKey:@"Text Size"]){
         textSize = [[settings objectForKey:@"Text Size"] stringByAppendingString:@".css"];
+    }
+    
+    if ([settings objectForKey:@"Reading Mode"]){
+        textStyle = [settings objectForKey:@"Reading Mode"];
     }
     
     SWRevealViewController *revealController = [self revealViewController];
@@ -88,9 +99,20 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
         if ([[data valueForKey:@"message"] isEqualToString:@"saveComments"]){
             [SSCore ssSaveComments:[ssDayA valueForKey:@"serial"] :[data valueForKey:@"serializedComments"]];
+            
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Comment"
+                                                                  action:@"Save"
+                                                                   label:nil
+                                                                   value:nil] build]];
         }
 
         if ([[data valueForKey:@"message"] isEqualToString:@"openBible"]){
+            
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Bible Verse"
+                                                                  action:@"Open"
+                                                                   label:nil
+                                                                   value:nil] build]];
+            
             [self openBible: [[NSJSONSerialization JSONObjectWithData:[[ssDayA valueForKey:@"day_verses"] dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] valueForKey:[data valueForKey:@"verse"]]];
         }
         
@@ -132,7 +154,8 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     NSString *html = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
     
     html = [html stringByReplacingOccurrencesOfString:@"{{platform}}" withString:@"ios"];
-    html = [html stringByReplacingOccurrencesOfString:@"small.css" withString:textSize];
+    html = [html stringByReplacingOccurrencesOfString:@"medium.css" withString:textSize];
+    html = [html stringByReplacingOccurrencesOfString:@"style_normal.css" withString:textStyle];
     
     [self.webView loadHTMLString:[html stringByReplacingOccurrencesOfString:@"<div class=\"wrapper\">" withString:[NSString stringWithFormat:@"<div class=\"wrapper\">%@", embedHTML]] baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/html/", [[NSBundle mainBundle] bundlePath]]]];
 }
@@ -143,6 +166,11 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             self.webView.userInteractionEnabled = NO;
             self.webView.userInteractionEnabled = YES;
             [self saveHighlights];
+            
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Selection"
+                                                                  action:@"Highlight"
+                                                                   label:nil
+                                                                   value:nil] build]];
         }
     }];
 }
@@ -153,6 +181,12 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             self.webView.userInteractionEnabled = NO;
             self.webView.userInteractionEnabled = YES;
             [self saveHighlights];
+            
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Selection"
+                                                                  action:@"Highlight"
+                                                                   label:nil
+                                                                   value:nil] build]];
+
         }
     }];
 }
@@ -161,6 +195,12 @@ UIBarButtonItem *goToTodayButtonItem = nil;
     NSMutableArray *sharingItems = [NSMutableArray new];
     [[UIApplication sharedApplication] sendAction:@selector(copy:) to:nil from:self forEvent:nil];
     NSString *shareText =  [UIPasteboard generalPasteboard].string;
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Selection"
+                                                          action:@"Share"
+                                                           label:nil
+                                                           value:nil] build]];
+
     
     [sharingItems addObject:shareText];
     [sharingItems addObject:self.expandZoomImageView.image];
@@ -247,7 +287,6 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             if ([[responseData valueForKey:@"message"] isEqual: @"setHighlightFinished"]){
                 self.webView.userInteractionEnabled = NO;
                 self.webView.userInteractionEnabled = YES;
-                [PFAnalytics trackEvent:@"text_highlighted"];
             }
         }];
         
@@ -255,7 +294,6 @@ UIBarButtonItem *goToTodayButtonItem = nil;
             if ([[responseData valueForKey:@"message"] isEqual: @"setCommentsFinished"]){
                 self.webView.userInteractionEnabled = NO;
                 self.webView.userInteractionEnabled = YES;
-                [PFAnalytics trackEvent:@"comment_added"];
             }
         }];
         

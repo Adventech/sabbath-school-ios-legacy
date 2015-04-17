@@ -34,6 +34,23 @@ UILabel *retryLabel = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if (![settings objectForKey:@"Lesson Language"]){
+        NSString *bPath = [[NSBundle mainBundle] bundlePath];
+        NSString *settingsPath = [bPath stringByAppendingPathComponent:@"Settings.bundle"];
+        NSString *plistFile = [settingsPath stringByAppendingPathComponent:@"Root.plist"];
+        NSDictionary *settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:plistFile];
+        NSArray *preferencesArray = [settingsDictionary objectForKey:@"PreferenceSpecifiers"];
+        NSArray *values = [[preferencesArray objectAtIndex:0] objectForKey:@"Values"];    
+        NSString *lang = [[NSLocale preferredLanguages] objectAtIndex:0];
+        
+        if (![values containsObject:lang]) {
+            lang = @"en";
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:lang forKey:@"Lesson Language"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, ([[UIScreen mainScreen] bounds].size.height))];
     
     downloadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];

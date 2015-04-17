@@ -47,10 +47,12 @@ static NSString *ssCurrentLesson = nil;
 }
 
 + (NSString *)getLang{
-    NSString *lang = [[NSLocale preferredLanguages] objectAtIndex:0];
-    if ([lang isEqualToString:@"ru"] || [lang isEqualToString:@"uk"]){
-        return @"ru";
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if ([settings objectForKey:@"Lesson Language"]){
+        return [settings objectForKey:@"Lesson Language"];
     }
+    
     return @"en";
 }
 
@@ -226,7 +228,7 @@ static NSString *ssCurrentLesson = nil;
     
     if (!count) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:[NSString stringWithFormat:@"https://s3-us-west-2.amazonaws.com/com.cryart.sabbathschool/temp_latest_%@.json", [self getLang]] parameters:nil success:^(AFHTTPRequestOperation *operation, id ssQuarterly) {
+        [manager GET:[NSString stringWithFormat:@"https://s3-us-west-2.amazonaws.com/com.cryart.sabbathschool/latest_%@.json?%@", [self getLang], [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000]] parameters:nil success:^(AFHTTPRequestOperation *operation, id ssQuarterly) {
 
             NSString *ssQuarterName = [ssQuarterly objectForKey:@"quarter_name"];
             NSString *ssQuarterImage = [ssQuarterly objectForKey:@"quarter_image"];

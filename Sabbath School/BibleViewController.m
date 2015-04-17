@@ -9,7 +9,7 @@
 #import "BibleViewController.h"
 #import "FontAwesomeKit.h"
 #import "Utils.h"
-#import <Parse/Parse.h>
+
 @interface BibleViewController ()
 @property UIActivityIndicatorView *activityIndicatorView;
 @end
@@ -34,9 +34,8 @@ NSString *bibleTextSize = @"small.css";
     self.popUpView.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     self.webView.layer.cornerRadius = 5;
     self.webView.clipsToBounds = YES;
+    self.screenName = @"SSBibleVerseActivity";
     [super viewDidLoad];
-    
-    [PFAnalytics trackEvent:@"bible_verse_opened"];
     
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     if ([settings objectForKey:@"Text Size"]){

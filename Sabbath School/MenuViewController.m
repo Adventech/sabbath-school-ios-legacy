@@ -12,11 +12,11 @@
 
 #import "MainViewController.h"
 #import "MenuViewController.h"
-#import "WeekSelectionViewController.h"
 #import "AboutViewController.h"
 #import "FontAwesomeKit.h"
 #import "IASKAppSettingsViewController.h"
-
+#import "IASKSettingsReader.h"
+#import "LoadingViewController.h"
 #import "SSCore.h"
 
 @interface MenuViewController ()
@@ -33,9 +33,11 @@ NSString *ssDaySelected = nil;
 
 NSInteger expanded = 0;
 NSInteger expanding = 0;
-
+NSString *lang = nil;
 - (void)viewDidLoad {
 	[super viewDidLoad];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingDidChange:) name:kIASKAppSettingChanged object:nil];
+
     ssDays = [SSCore ssGetDays:[SSCore ssTodayDate]];
     ssLesson = [SSCore ssGetLessonByDay:[SSCore ssTodayDate]];
     ssLessonsInner = [SSCore ssGetLessons];
@@ -219,12 +221,32 @@ NSInteger expanding = 0;
 #pragma mark -
 #pragma mark IASKAppSettingsViewControllerDelegate protocol
 - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender {
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    mainViewController.ssDayDate = ssDaySelected;
-    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    [frontNavigationController.navigationBar setTintColor:[Utils colorWithHex:0x504e60 alpha:1.0]];
-    [self.revealViewController pushFrontViewController:frontNavigationController animated:YES];
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 
+    NSString *langAfterSettings = [settings objectForKey:@"Lesson Language"];
+    if (![lang isEqualToString:langAfterSettings]){
+        LoadingViewController *lwc = [[LoadingViewController alloc] init];
+//        [[[UIApplication sharedApplication] delegate].window setRootViewController:lwc];
+        [self presentViewController:lwc animated:YES completion:nil];
+
+    } else {
+        MainViewController *mainViewController = [[MainViewController alloc] init];
+        mainViewController.ssDayDate = ssDaySelected;
+        UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+        [frontNavigationController.navigationBar setTintColor:[Utils colorWithHex:0x504e60 alpha:1.0]];
+        [self.revealViewController pushFrontViewController:frontNavigationController animated:YES];
+    }
+}
+
+#pragma mark kIASKAppSettingChanged notification
+- (void)settingDidChange:(NSNotification*)notification {
+//    NSLog(@"FSDFDSFDSDFSFDSFDSFDSFDSFDS");
+//    if ([notification.object isEqual:@"Lesson Language"]) {
+//
+//        LoadingViewController *lwc = [[LoadingViewController alloc] init];
+//        [[[UIApplication sharedApplication] delegate].window setRootViewController:lwc];
+//    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -267,6 +289,8 @@ NSInteger expanding = 0;
                     IASKAppSettingsViewController *settings = [[IASKAppSettingsViewController alloc] init];
                     settings.title = NSLocalizedString(@"APP_MENU_SETTINGS", nul);
                     settings.delegate = self;
+                    
+                    lang = [SSCore getLang];
                     
                     frontNavigationController = [[UINavigationController alloc] initWithRootViewController:settings];
                     [revealController pushFrontViewController:frontNavigationController animated:YES];
