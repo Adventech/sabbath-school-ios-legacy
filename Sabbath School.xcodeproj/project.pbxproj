@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8601031E18B2DDCD0086540D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8601032018B2DDCD0086540D /* Localizable.strings */; };
+		8604B93D1ADF4D7100D58D2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8604B93C1ADF4D7100D58D2C /* CoreData.framework */; };
+		8604B93F1ADF4D7E00D58D2C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8604B93E1ADF4D7E00D58D2C /* libz.dylib */; };
 		8609B98519259AF1004A422D /* PTS56F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8609B98319259AF1004A422D /* PTS56F.ttf */; };
 		8609B98619259AF1004A422D /* PTS76F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8609B98419259AF1004A422D /* PTS76F.ttf */; };
 		861D2DB418B7D3A300C1195A /* PTF55F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 861D2DB018B7D3A300C1195A /* PTF55F.ttf */; };
@@ -33,8 +35,6 @@
 		8636BFE118B29F1E00A94448 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636BFDF18B29F1E00A94448 /* MainViewController.m */; };
 		8636BFE218B29F1E00A94448 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8636BFE018B29F1E00A94448 /* MainViewController.xib */; };
 		8636BFE618B29F8800A94448 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636BFE518B29F8800A94448 /* Utils.m */; };
-		8636BFF118B2A0D700A94448 /* WeekSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636BFEF18B2A0D700A94448 /* WeekSelectionViewController.m */; };
-		8636BFF218B2A0D700A94448 /* WeekSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8636BFF018B2A0D700A94448 /* WeekSelectionViewController.xib */; };
 		863E105C19DB7EBD002EB2B3 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 863E105B19DB7EBD002EB2B3 /* html */; };
 		8644B19B1963224500EE8399 /* FAKFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 8644B18D1963224500EE8399 /* FAKFontAwesome.m */; };
 		8644B19C1963224500EE8399 /* FAKFoundationIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 8644B18F1963224500EE8399 /* FAKFoundationIcons.m */; };
@@ -46,7 +46,7 @@
 		8644B1A21963224500EE8399 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8644B1991963224500EE8399 /* ionicons.ttf */; };
 		8644B1A31963224500EE8399 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8644B19A1963224500EE8399 /* zocial-regular-webfont.ttf */; };
 		8644B1A51963225700EE8399 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8644B1A41963225700EE8399 /* CoreText.framework */; };
-		8644B1A719636AC100EE8399 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8644B1A619636AC100EE8399 /* Parse.framework */; };
+		86487E451ADF871E00290CAC /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86487E441ADF871E00290CAC /* libGoogleAnalyticsServices.a */; };
 		86672923191D42B9009830D9 /* BibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86672921191D42B9009830D9 /* BibleViewController.m */; };
 		86672924191D42B9009830D9 /* BibleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86672922191D42B9009830D9 /* BibleViewController.xib */; };
 		8667435F195E48C3006F40F3 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8667435E195E48C3006F40F3 /* Base64.m */; };
@@ -57,7 +57,6 @@
 		86912BE518D3D19E00AE6081 /* SSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 86912BE418D3D19E00AE6081 /* SSCore.m */; };
 		86912BEB18D3D78000AE6081 /* sda_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86912BE818D3D78000AE6081 /* sda_logo.png */; };
 		86912BEE18D3D7D900AE6081 /* GOUDOS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 86912BEC18D3D7D900AE6081 /* GOUDOS.TTF */; };
-		869256A31A1843AC009DAB20 /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 869256A11A1843AC009DAB20 /* Root.strings */; };
 		86C21DD719105C02008D86F5 /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C21DD519105C02008D86F5 /* PTN57F.ttf */; };
 		86C21DD819105C02008D86F5 /* PTN77F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C21DD619105C02008D86F5 /* PTN77F.ttf */; };
 		86C21DED1911D60C008D86F5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C21DDB1911D60C008D86F5 /* AFHTTPRequestOperation.m */; };
@@ -117,6 +116,18 @@
 		8601031D18B2DD6C0086540D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8601031F18B2DDCD0086540D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8601032118B2DDE30086540D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8604B9301ADF4D4E00D58D2C /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		8604B9311ADF4D4E00D58D2C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		8604B9321ADF4D4E00D58D2C /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		8604B9331ADF4D4E00D58D2C /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		8604B9341ADF4D4E00D58D2C /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		8604B9351ADF4D4E00D58D2C /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		8604B9361ADF4D4E00D58D2C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		8604B9371ADF4D4E00D58D2C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		8604B9381ADF4D4E00D58D2C /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		8604B9391ADF4D4E00D58D2C /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		8604B93C1ADF4D7100D58D2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8604B93E1ADF4D7E00D58D2C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8609B98319259AF1004A422D /* PTS56F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTS56F.ttf; sourceTree = "<group>"; };
 		8609B98419259AF1004A422D /* PTS76F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTS76F.ttf; sourceTree = "<group>"; };
 		8609CC05197EE96F008AD638 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -156,9 +167,6 @@
 		8636BFE018B29F1E00A94448 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ../MainViewController.xib; sourceTree = "<group>"; };
 		8636BFE418B29F8800A94448 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = ../Utils.h; sourceTree = "<group>"; };
 		8636BFE518B29F8800A94448 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = ../Utils.m; sourceTree = "<group>"; };
-		8636BFEE18B2A0D700A94448 /* WeekSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekSelectionViewController.h; sourceTree = "<group>"; };
-		8636BFEF18B2A0D700A94448 /* WeekSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekSelectionViewController.m; sourceTree = "<group>"; };
-		8636BFF018B2A0D700A94448 /* WeekSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekSelectionViewController.xib; sourceTree = "<group>"; };
 		863E105B19DB7EBD002EB2B3 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		8644B18C1963224500EE8399 /* FAKFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKFontAwesome.h; sourceTree = "<group>"; };
 		8644B18D1963224500EE8399 /* FAKFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKFontAwesome.m; sourceTree = "<group>"; };
@@ -176,7 +184,7 @@
 		8644B1991963224500EE8399 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		8644B19A1963224500EE8399 /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
 		8644B1A41963225700EE8399 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		8644B1A619636AC100EE8399 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		86487E441ADF871E00290CAC /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		86672920191D42B9009830D9 /* BibleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BibleViewController.h; sourceTree = "<group>"; };
 		86672921191D42B9009830D9 /* BibleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BibleViewController.m; sourceTree = "<group>"; };
 		86672922191D42B9009830D9 /* BibleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BibleViewController.xib; sourceTree = "<group>"; };
@@ -189,7 +197,6 @@
 		86912BE418D3D19E00AE6081 /* SSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCore.m; sourceTree = "<group>"; };
 		86912BE818D3D78000AE6081 /* sda_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sda_logo.png; sourceTree = "<group>"; };
 		86912BEC18D3D7D900AE6081 /* GOUDOS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOUDOS.TTF; sourceTree = "<group>"; };
-		869256A21A1843AC009DAB20 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "Sabbath School/Settings.bundle/ru.lproj/Root.strings"; sourceTree = "<group>"; };
 		86C21DD519105C02008D86F5 /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
 		86C21DD619105C02008D86F5 /* PTN77F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN77F.ttf; sourceTree = "<group>"; };
 		86C21DDA1911D60C008D86F5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -256,13 +263,18 @@
 		86C383191A0EB29800DBCEE9 /* IASKSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSwitch.m; sourceTree = "<group>"; };
 		86C3831A1A0EB29800DBCEE9 /* IASKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextField.h; sourceTree = "<group>"; };
 		86C3831B1A0EB29800DBCEE9 /* IASKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextField.m; sourceTree = "<group>"; };
-		86CACB201A1843F2007FBB18 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = "Sabbath School/Settings.bundle/uk.lproj/Root.strings"; sourceTree = "<group>"; };
 		86D31D2E18B306320043746A /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		86D31D2F18B306320043746A /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		86D31D3018B306320043746A /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		86D31D4618B7A3A60043746A /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		86D31D4718B7A3A60043746A /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		86D31D4818B7A3A60043746A /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		86DDD44F1ADF37BC00D535D4 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86DDD4501ADF37BE00D535D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86DDD4511ADF37BF00D535D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86DDD4521ADF37D600D535D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86DDD4531ADF37D600D535D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86DDD4541ADF37D800D535D4 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		86DEB77218E3A2F700896052 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		86DEB77318E3A2F700896052 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		86DEB77418E3A2F700896052 /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
@@ -287,11 +299,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8604B93F1ADF4D7E00D58D2C /* libz.dylib in Frameworks */,
+				8604B93D1ADF4D7100D58D2C /* CoreData.framework in Frameworks */,
 				866D078C1A0ECD2A006FA82A /* MessageUI.framework in Frameworks */,
+				86487E451ADF871E00290CAC /* libGoogleAnalyticsServices.a in Frameworks */,
 				8644B1A51963225700EE8399 /* CoreText.framework in Frameworks */,
 				86EF63A8190321ED00A1DE02 /* libsqlite3.0.dylib in Frameworks */,
 				8636BFD718B29EBB00A94448 /* QuartzCore.framework in Frameworks */,
-				8644B1A719636AC100EE8399 /* Parse.framework in Frameworks */,
 				8636BFA118B29E3E00A94448 /* CoreGraphics.framework in Frameworks */,
 				8636BFA318B29E3E00A94448 /* UIKit.framework in Frameworks */,
 				8636BF9F18B29E3E00A94448 /* Foundation.framework in Frameworks */,
@@ -311,10 +325,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8604B92F1ADF4D4E00D58D2C /* GA */ = {
+			isa = PBXGroup;
+			children = (
+				8604B9301ADF4D4E00D58D2C /* GAI.h */,
+				8604B9311ADF4D4E00D58D2C /* GAIDictionaryBuilder.h */,
+				8604B9321ADF4D4E00D58D2C /* GAIEcommerceFields.h */,
+				8604B9331ADF4D4E00D58D2C /* GAIEcommerceProduct.h */,
+				8604B9341ADF4D4E00D58D2C /* GAIEcommerceProductAction.h */,
+				8604B9351ADF4D4E00D58D2C /* GAIEcommercePromotion.h */,
+				8604B9361ADF4D4E00D58D2C /* GAIFields.h */,
+				8604B9371ADF4D4E00D58D2C /* GAILogger.h */,
+				8604B9381ADF4D4E00D58D2C /* GAITrackedViewController.h */,
+				8604B9391ADF4D4E00D58D2C /* GAITracker.h */,
+			);
+			path = GA;
+			sourceTree = "<group>";
+		};
 		8636BF9218B29E3E00A94448 = {
 			isa = PBXGroup;
 			children = (
-				869256A11A1843AC009DAB20 /* Root.strings */,
 				8636BFA418B29E3E00A94448 /* Sabbath School */,
 				8636BFBD18B29E3E00A94448 /* Sabbath SchoolTests */,
 				8636BF9D18B29E3E00A94448 /* Frameworks */,
@@ -334,6 +364,8 @@
 		8636BF9D18B29E3E00A94448 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8604B93E1ADF4D7E00D58D2C /* libz.dylib */,
+				8604B93C1ADF4D7100D58D2C /* CoreData.framework */,
 				8644B1A41963225700EE8399 /* CoreText.framework */,
 				862CF41519626702007A060F /* MessageUI.framework */,
 				862CF413196266FD007A060F /* Security.framework */,
@@ -361,7 +393,6 @@
 				86912BE218D3D17100AE6081 /* Lib */,
 				8636BFE318B29F2700A94448 /* MainViewController */,
 				8636BFDD18B29EFD00A94448 /* MenuViewController */,
-				8636BFED18B2A02600A94448 /* WeekSelectionViewController */,
 				8636BFD518B29E9900A94448 /* Vendor */,
 				8636BFA518B29E3E00A94448 /* Supporting Files */,
 				8636BFF318B2A31400A94448 /* Resources */,
@@ -412,9 +443,10 @@
 		8636BFD518B29E9900A94448 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				86487E441ADF871E00290CAC /* libGoogleAnalyticsServices.a */,
+				8604B92F1ADF4D4E00D58D2C /* GA */,
 				86C382EC1A0EB29800DBCEE9 /* InAppSettingsKit */,
 				86C382C31A0E815000DBCEE9 /* SWRevealViewController */,
-				8644B1A619636AC100EE8399 /* Parse.framework */,
 				8644B1871963219600EE8399 /* FontAwesomeKit */,
 				8667435C195E4875006F40F3 /* Base64 */,
 				86C21DD91911D5F5008D86F5 /* AFNetworking */,
@@ -452,16 +484,6 @@
 				8636BFE518B29F8800A94448 /* Utils.m */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		8636BFED18B2A02600A94448 /* WeekSelectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8636BFEE18B2A0D700A94448 /* WeekSelectionViewController.h */,
-				8636BFEF18B2A0D700A94448 /* WeekSelectionViewController.m */,
-				8636BFF018B2A0D700A94448 /* WeekSelectionViewController.xib */,
-			);
-			name = WeekSelectionViewController;
 			sourceTree = "<group>";
 		};
 		8636BFF318B2A31400A94448 /* Resources */ = {
@@ -792,7 +814,6 @@
 			files = (
 				8636BFA918B29E3E00A94448 /* InfoPlist.strings in Resources */,
 				861D2DB518B7D3A300C1195A /* PTF56F.ttf in Resources */,
-				8636BFF218B2A0D700A94448 /* WeekSelectionViewController.xib in Resources */,
 				8636BFDC18B29EF200A94448 /* MenuViewController.xib in Resources */,
 				861D2DB618B7D3A300C1195A /* PTF75F.ttf in Resources */,
 				8601031E18B2DDCD0086540D /* Localizable.strings in Resources */,
@@ -816,7 +837,6 @@
 				8636BFE218B29F1E00A94448 /* MainViewController.xib in Resources */,
 				86912BEB18D3D78000AE6081 /* sda_logo.png in Resources */,
 				868240931917EC18001926BD /* blur_background.jpg in Resources */,
-				869256A31A1843AC009DAB20 /* Root.strings in Resources */,
 				86D31D4918B7A3A60043746A /* WebViewJavascriptBridge.js.txt in Resources */,
 				8644B1A01963224500EE8399 /* FontAwesome.otf in Resources */,
 				868240901917EA78001926BD /* blur_background_sidebar.jpg in Resources */,
@@ -858,7 +878,6 @@
 				86C3831F1A0EB29800DBCEE9 /* IASKSettingsReader.m in Sources */,
 				86C382C61A0E815000DBCEE9 /* SWRevealViewController.m in Sources */,
 				8667435F195E48C3006F40F3 /* Base64.m in Sources */,
-				8636BFF118B2A0D700A94448 /* WeekSelectionViewController.m in Sources */,
 				86C383201A0EB29800DBCEE9 /* IASKSettingsStore.m in Sources */,
 				8636BFE118B29F1E00A94448 /* MainViewController.m in Sources */,
 				86C383221A0EB29800DBCEE9 /* IASKSettingsStoreUserDefaults.m in Sources */,
@@ -915,6 +934,9 @@
 				8601031F18B2DDCD0086540D /* en */,
 				8601032118B2DDE30086540D /* ru */,
 				8609CC06197EE96F008AD638 /* uk */,
+				86DDD4521ADF37D600D535D4 /* es */,
+				86DDD4531ADF37D600D535D4 /* fr */,
+				86DDD4541ADF37D800D535D4 /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -925,6 +947,9 @@
 				8636BFA818B29E3E00A94448 /* en */,
 				8601031C18B2DD6C0086540D /* ru */,
 				8609CC05197EE96F008AD638 /* uk */,
+				86DDD44F1ADF37BC00D535D4 /* pt */,
+				86DDD4501ADF37BE00D535D4 /* fr */,
+				86DDD4511ADF37BF00D535D4 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -937,15 +962,6 @@
 				8609CC07197EE96F008AD638 /* uk */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		869256A11A1843AC009DAB20 /* Root.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				869256A21A1843AC009DAB20 /* ru */,
-				86CACB201A1843F2007FBB18 /* uk */,
-			);
-			name = Root.strings;
 			sourceTree = "<group>";
 		};
 		86C383011A0EB29800DBCEE9 /* IASKLocalizable.strings */ = {
@@ -1067,6 +1083,13 @@
 				GCC_PREFIX_HEADER = "Sabbath School/Sabbath School-Prefix.pch";
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sabbath",
+					School,
+					"$(PROJECT_DIR)/Sabbath",
+					School,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1091,6 +1114,13 @@
 				GCC_PREFIX_HEADER = "Sabbath School/Sabbath School-Prefix.pch";
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sabbath",
+					School,
+					"$(PROJECT_DIR)/Sabbath",
+					School,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
