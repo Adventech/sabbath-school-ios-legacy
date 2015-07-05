@@ -14,11 +14,16 @@ body {
     background: #ffffff;
 }
 
-p {
+p, table {
     font-family: "PT Serif", serif;
     margin: 15px 0;
     font-size: 13px;
     line-height: 20px;
+}
+
+table td, table th {
+    border: 1px solid #333;
+    padding: 5px;
 }
 
 .title {

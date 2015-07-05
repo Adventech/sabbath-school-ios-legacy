@@ -12,7 +12,7 @@ body > h3 {
     margin: 0 0 10px 0;
 }
 
-h3 {
+h2, h3 {
     font-size: 15px;
     font-weight: bold;
     line-height: 18px;
@@ -24,7 +24,11 @@ p {
     margin: 10px 0;
 }
 
-sup {
+span.verse {
+    margin-right: 5px;
+}
+
+span.verse, sup {
     vertical-align: super;
     font-size: 0.83em;
     font-weight: bold;
