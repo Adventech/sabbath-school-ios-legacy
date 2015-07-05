@@ -15,6 +15,7 @@
 				<string>Russian</string>
 				<string>Spanish</string>
 				<string>Ukrainian</string>
+				<string>German</string>
 			</array>
 			<key>Values</key>
 			<array>
@@ -24,6 +25,7 @@
 				<string>ru</string>
 				<string>es</string>
 				<string>uk</string>
+				<string>de</string>
 			</array>
 			<key>Title</key>
 			<string>Lesson Language</string>
@@ -32,7 +34,7 @@
 			<key>DefaultValue</key>
 			<string>en</string>
 			<key>FooterText</key>
-            <string>Warning: Data charges may apply!</string>
+			<string>Warning: Data charges may apply!</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -81,26 +83,25 @@
 			<string>style_normal.css</string>
 		</dict>
 		<dict>
-      <key>DefaultValue</key>
-      <string>https://facebook.com/shabbatschool</string>
-      <key>File</key>
-      <string>https://facebook.com/shabbatschool</string>
-      <key>Title</key>
-      <string>Facebook Page</string>
-      <key>Type</key>
-      <string>IASKOpenURLSpecifier</string>
-	  </dict>
-	  
-	  <dict>
-      <key>DefaultValue</key>
-      <string>vitalikl.github.io/ss</string>
-      <key>File</key>
-      <string>vitalikl.github.io/ss</string>
-      <key>Title</key>
-      <string>Website</string>
-      <key>Type</key>
-      <string>IASKOpenURLSpecifier</string>
-	  </dict>
+			<key>DefaultValue</key>
+			<string>https://facebook.com/shabbatschool</string>
+			<key>File</key>
+			<string>https://facebook.com/shabbatschool</string>
+			<key>Title</key>
+			<string>Facebook Page</string>
+			<key>Type</key>
+			<string>IASKOpenURLSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>vitalikl.github.io/ss</string>
+			<key>File</key>
+			<string>vitalikl.github.io/ss</string>
+			<key>Title</key>
+			<string>Website</string>
+			<key>Type</key>
+			<string>IASKOpenURLSpecifier</string>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

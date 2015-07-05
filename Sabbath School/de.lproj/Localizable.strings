@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Sabbath School
+
+  Created by Vitaliy L on 2/17/2014.
+  Copyright (c) 2014 Vitaliy Lim. All rights reserved.
+*/
+"APP_TITLE" = "SABBATSCHULE";
+"APP_ABOUT" = "ÜBER";
+"APP_SHARE" = "TEILEN";
+"APP_TODAY" = "Heute";
+"APP_AUTHOR" = "verfasser";
+"APP_SHARE_TEXT" = "Schauen Sie sich dieses neue Sabbatschule app!";
+"APP_DOWNLOADING" = "Herunterladen von aktuellen Quartals ...";
+"APP_ERROR_DOWNLOADING" = "Kommunikationsfehler aufgetreten.";
+"APP_ERROR_NO_NETWORK" = "Verbindung zum Internet, um neue vierteljährliche installieren.";
+"APP_RETRY" = "WIEDERHOLEN";
+"APP_HIGHLIGHT" = "Höhepunkt";
+"APP_REMOVE_HIGHLIGHT" = "Entfernen Höhepunkt";
+"APP_SHARE_SELECTION" = "Teilen";
+"APP_MENU_SHARE" = "Teilen";
+"APP_MENU_SETTINGS" = "Einstellungen";
+"APP_MENU_ABOUT" = "Über";
+"Sabbath School" = "Sabbatschule";
+"APP_CLOSE" = "Schließen";
+"APP_ABOUT_PHOTO_CREDITS" = "Bildnachweis @asimsness";
