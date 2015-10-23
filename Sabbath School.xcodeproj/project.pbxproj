@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1C179F1B490FA600EC5C74 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86487E441ADF871E00290CAC /* libGoogleAnalyticsServices.a */; };
 		8601031E18B2DDCD0086540D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8601032018B2DDCD0086540D /* Localizable.strings */; };
 		8604B93D1ADF4D7100D58D2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8604B93C1ADF4D7100D58D2C /* CoreData.framework */; };
 		8604B93F1ADF4D7E00D58D2C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8604B93E1ADF4D7E00D58D2C /* libz.dylib */; };
@@ -46,7 +47,6 @@
 		8644B1A21963224500EE8399 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8644B1991963224500EE8399 /* ionicons.ttf */; };
 		8644B1A31963224500EE8399 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8644B19A1963224500EE8399 /* zocial-regular-webfont.ttf */; };
 		8644B1A51963225700EE8399 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8644B1A41963225700EE8399 /* CoreText.framework */; };
-		86487E451ADF871E00290CAC /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86487E441ADF871E00290CAC /* libGoogleAnalyticsServices.a */; };
 		86672923191D42B9009830D9 /* BibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86672921191D42B9009830D9 /* BibleViewController.m */; };
 		86672924191D42B9009830D9 /* BibleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86672922191D42B9009830D9 /* BibleViewController.xib */; };
 		8667435F195E48C3006F40F3 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8667435E195E48C3006F40F3 /* Base64.m */; };
@@ -112,6 +112,8 @@
 
 /* Begin PBXFileReference section */
 		1A4DAE3982CE4967A9C06A7E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1C179D1B490BE400EC5C74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A1C179E1B490C1500EC5C74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8601031C18B2DD6C0086540D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8601031D18B2DD6C0086540D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8601031F18B2DDCD0086540D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -299,10 +301,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1C179F1B490FA600EC5C74 /* libGoogleAnalyticsServices.a in Frameworks */,
 				8604B93F1ADF4D7E00D58D2C /* libz.dylib in Frameworks */,
 				8604B93D1ADF4D7100D58D2C /* CoreData.framework in Frameworks */,
 				866D078C1A0ECD2A006FA82A /* MessageUI.framework in Frameworks */,
-				86487E451ADF871E00290CAC /* libGoogleAnalyticsServices.a in Frameworks */,
 				8644B1A51963225700EE8399 /* CoreText.framework in Frameworks */,
 				86EF63A8190321ED00A1DE02 /* libsqlite3.0.dylib in Frameworks */,
 				8636BFD718B29EBB00A94448 /* QuartzCore.framework in Frameworks */,
@@ -937,6 +939,7 @@
 				86DDD4521ADF37D600D535D4 /* es */,
 				86DDD4531ADF37D600D535D4 /* fr */,
 				86DDD4541ADF37D800D535D4 /* pt */,
+				7A1C179E1B490C1500EC5C74 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				86DDD44F1ADF37BC00D535D4 /* pt */,
 				86DDD4501ADF37BE00D535D4 /* fr */,
 				86DDD4511ADF37BF00D535D4 /* es */,
+				7A1C179D1B490BE400EC5C74 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1008,6 +1012,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: VITALIY LIM (XKWQXM6S84)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: VITALIY LIM (XKWQXM6S84)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1023,8 +1028,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "33EE5E89-C7FA-4E32-A537-2838F9975D9B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1050,6 +1056,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: VITALIY LIM (XVGX5G4YQ9)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1058,7 +1065,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "D1229846-9AF0-4DF7-A554-9CF310D8067D";
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
+				PROVISIONING_PROFILE = "bb269593-e29e-4a30-8b17-35f317759821";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -1071,25 +1079,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: VITALIY LIM (XKWQXM6S84)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mesee/Documents/xcode-workspace/Sabbath",
+					"$(PROJECT_DIR)/Sabbath",
 					School,
-					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sabbath School/Sabbath School-Prefix.pch";
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Sabbath",
-					School,
-					"$(PROJECT_DIR)/Sabbath",
-					School,
-				);
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1102,27 +1102,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mesee/Documents/xcode-workspace/Sabbath",
+					"$(PROJECT_DIR)/Sabbath",
 					School,
-					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sabbath School/Sabbath School-Prefix.pch";
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Sabbath",
-					School,
-					"$(PROJECT_DIR)/Sabbath",
-					School,
-				);
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "bb269593-e29e-4a30-8b17-35f317759821";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
