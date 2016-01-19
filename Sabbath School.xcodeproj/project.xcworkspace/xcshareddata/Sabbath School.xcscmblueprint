@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3EDDA458B352BF8251BC30A229E552EBDCBE8E22",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3EDDA458B352BF8251BC30A229E552EBDCBE8E22" : 0,
+    "AB95DB9D-99E0-4997-BA15-6032DAD76D7B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DF40D171-BA1E-4D7A-9959-67E691A73C7E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3EDDA458B352BF8251BC30A229E552EBDCBE8E22" : "Sabbath%20School",
+    "AB95DB9D-99E0-4997-BA15-6032DAD76D7B" : "Sabbath School"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Sabbath School",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sabbath School.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/v1talik\/ios-sabbath-school.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3EDDA458B352BF8251BC30A229E552EBDCBE8E22"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/v1talik\/ios-sabbath-school.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AB95DB9D-99E0-4997-BA15-6032DAD76D7B"
+    }
+  ]
+}

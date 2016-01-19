@@ -765,7 +765,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SabbathSchool;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Vitaliy Lim";
 				TargetAttributes = {
 					8636BF9A18B29E3E00A94448 = {
@@ -1012,6 +1012,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: VITALIY LIM (XKWQXM6S84)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: VITALIY LIM (XKWQXM6S84)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1080,6 +1081,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sabbath",
@@ -1090,6 +1092,7 @@
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cryart.SabbathSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1104,6 +1107,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Distribution";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sabbath",
@@ -1114,6 +1118,7 @@
 				INFOPLIST_FILE = "Sabbath School/Sabbath School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/**";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cryart.SabbathSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bb269593-e29e-4a30-8b17-35f317759821";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1137,6 +1142,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Sabbath SchoolTests/Sabbath SchoolTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cryart.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1155,6 +1161,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sabbath School/Sabbath School-Prefix.pch";
 				INFOPLIST_FILE = "Sabbath SchoolTests/Sabbath SchoolTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cryart.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
