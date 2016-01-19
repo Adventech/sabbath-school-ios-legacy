@@ -79,9 +79,9 @@ UILabel *retryLabel = nil;
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     if (!isiPhone5) {
-        self.imageView.image = [UIImage imageNamed:@"blur_background.jpg"];
+        self.imageView.image = [UIImage imageNamed:@"blur_background"];
     } else {
-        self.imageView.image = [UIImage imageNamed:@"blur_background_568.jpg"];        
+        self.imageView.image = [UIImage imageNamed:@"blur_background_568"];        
     }
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
